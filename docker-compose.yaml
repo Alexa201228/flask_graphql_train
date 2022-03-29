@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres
+    restart: on-failure
+    container_name: graphql_postgres_db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB_USER=postgres
+      - POSTGRES_DB_PASSWORD=postgres
+
+  web:
+    container_name: flask_graphql_app
